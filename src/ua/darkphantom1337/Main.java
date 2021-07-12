@@ -11,68 +11,48 @@ import java.util.TimerTask;
 public class Main {
 
     public static void main(String[] args) {
-        int []a = {3, 2, 1, 5, 6, 7};
-
-        int i = 0;
-
-        while (i < a.length) {
-
-            i++;
-
-            System.out.print(a[i]);
-
-        }
-        boolean A = false, B = false, C = true ;
-        if ((!A || B) && !C){
-            System.out.println("TRUE");
-            return;
-        }
-        System.out.println("FALSE");
-        System.out.print((1 + "1") + (1 + 3) + 'h' + "b");
-
-
-        return;
-        /*System.out.println("Starting Alarm");
+        System.out.println("Starting Alarm");
         Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,04);
-        cal.set(Calendar.MINUTE,55);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 04);
+        cal.set(Calendar.MINUTE, 55);
         startAlarm(cal.getTime());
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,05);
-        cal.set(Calendar.MINUTE,00);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 05);
+        cal.set(Calendar.MINUTE, 00);
         startAlarm(cal.getTime());
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,05);
-        cal.set(Calendar.MINUTE,05);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 05);
+        cal.set(Calendar.MINUTE, 05);
         startAlarm(cal.getTime());
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,05);
-        cal.set(Calendar.MINUTE,10);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 05);
+        cal.set(Calendar.MINUTE, 10);
         startAlarm(cal.getTime());
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,05);
-        cal.set(Calendar.MINUTE,15);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 05);
+        cal.set(Calendar.MINUTE, 15);
         startAlarm(cal.getTime());
-        cal.set(Calendar.DAY_OF_MONTH,16);
-        cal.set(Calendar.HOUR_OF_DAY,05);
-        cal.set(Calendar.MINUTE,20);
+        cal.set(Calendar.DAY_OF_MONTH, 16);
+        cal.set(Calendar.HOUR_OF_DAY, 05);
+        cal.set(Calendar.MINUTE, 20);
         System.out.println("Signals set");
         startAlarm(cal.getTime());
         System.out.println("Alarm started...");
-        System.out.println("Wait signal...");*/
+        System.out.println("Wait signal...");
     }
-    
-    public static void startAlarm(Date startdate){
+
+    public static void startAlarm(Date startdate) {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 setSystemVolume(100);
                 playAudio();
             }
-        },startdate);
+        }, startdate);
     }
-    public static void playAudio(){
+
+    public static void playAudio() {
         try {
             File soundFile = new File("C:\\Hard_Rock_Sofa_Dirty_Shade_-_Collapsar (online-audio-converter.com).wav"); //Звуковой файл
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
